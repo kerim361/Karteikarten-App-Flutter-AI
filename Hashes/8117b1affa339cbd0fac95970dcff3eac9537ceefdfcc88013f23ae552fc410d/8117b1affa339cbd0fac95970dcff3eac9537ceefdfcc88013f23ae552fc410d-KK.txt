@@ -1,0 +1,623 @@
+Karteikarte 1
+Frage: Was sind die vier Elemente des Requirements Engineering Prozesses?
+Antwort:
+- Ermittlung der Anforderungen
+- Spezifikation der Anforderungen
+- Validierung der Anforderungen
+- Dokumentation der Anforderungen
+
+Karteikarte 2
+Frage: Welche Hauptbestandteile umfasst die Dokumentation im Requirements Engineering?
+Antwort:
+- Lastenheft
+- Pflichtenheft
+
+Karteikarte 3
+Frage: Was beschreibt das Lastenheft?
+Antwort:
+- Anforderungen aus Sicht der Nutzer:innen
+- „Was soll die Software können?“
+
+Karteikarte 4
+Frage: Was enthält das Pflichtenheft?
+Antwort:
+- Abgeleitete Anforderungen aus dem Lastenheft
+- „In welchem Umfang und unter welchen Bedingungen wird die Software eingesetzt?“
+
+Karteikarte 5
+Frage: Welche Prüfkriterien gibt es für die Validierung von Anforderungen?
+Antwort:
+- Gültigkeit
+- Konsistenz
+- Vollständigkeit
+- Realisierbarkeit
+- Verifizierbarkeit
+
+Karteikarte 6
+Frage: Nenne drei Techniken zur Validierung von Anforderungen.
+Antwort:
+- Anforderungsreviews
+- Prototypen
+- Testfallerzeugung
+
+Karteikarte 7
+Frage: Was ist der Vorteil eines iterativen Requirements Engineering Prozesses?
+Antwort:
+- Anpassung an spezifische Gegebenheiten
+- Wiederholtes Durchlaufen der Prozessschritte zur Verbesserung
+
+Karteikarte 8
+Frage: Was sind User Stories?
+Antwort:
+- Kurze Beschreibungen einzelner Anforderungen
+- Aus Sicht von Benutzer:innen geschrieben
+
+Karteikarte 9
+Frage: Welche Struktur haben typische User Stories?
+Antwort:
+- As a (Rolle) I want (Etwas) so that (Nutzen)
+
+Karteikarte 10
+Frage: Was unterscheidet funktionale von nicht-funktionalen Anforderungen?
+Antwort:
+- Funktional: Beschreibt, was das System tun soll
+- Nicht-funktional: Beschreibt, wie das System sein soll
+
+Karteikarte 11
+Frage: Nenne zwei Beispiele für nicht-funktionale Anforderungen.
+Antwort:
+- Maximale Speichernutzung
+- Maximale Berechnungszeit
+
+Karteikarte 12
+Frage: Was ist UML?
+Antwort:
+- Unified Modeling Language
+- Visuelle Sprache zur Spezifikation, Konstruktion und Dokumentation technischer Systeme
+
+Karteikarte 13
+Frage: Welche Elemente umfasst die UML Infrastructure?
+Antwort:
+- Sprachkern wie Klasse, Assoziation, Attribut, Methode
+- Erweiterung durch Nutzer:innen-Ebene und Profile
+
+Karteikarte 14
+Frage: Was ist die UML Superstructure?
+Antwort:
+- Erweiterung des Sprachkerns auf den vollständigen UML-Sprachumfang
+- Definiert Modellelemente, Notationen, Diagrammtypen
+
+Karteikarte 15
+Frage: Wofür wird die UML Object Constraint Language (OCL) verwendet?
+Antwort:
+- Spezifikation von Invarianten und Bedingungen
+- Konsistent zum UML-Metamodell
+
+Karteikarte 16
+Frage: Nenne drei Arten von UML-Diagrammen.
+Antwort:
+- Strukturdiagramme
+- Verhaltensdiagramme
+- Interaktionsdiagramme
+
+Karteikarte 17
+Frage: Was beschreibt die Verhaltensmodellierung in UML?
+Antwort:
+- Dynamische Aspekte des Systems
+- Veränderungen der Eigenschaften und Struktur des Systems
+
+Karteikarte 18
+Frage: Welche Grundformen der Verhaltensbeschreibung gibt es in UML?
+Antwort:
+- Anwendungsfälle (Use Cases)
+- Zustandsautomaten
+- Aktivitäten
+
+Karteikarte 19
+Frage: Was ist ein Use-Case Diagramm?
+Antwort:
+- Grafische Erfassung von Akteuren und Anwendungsfällen
+- Zeigt Interaktionen zwischen Akteuren und dem System
+
+Karteikarte 20
+Frage: Welche Elemente gehören zu einem Use-Case Diagramm?
+Antwort:
+- Akteur:in
+- Anwendungsfälle
+- Beziehungen zwischen Akteuren und Use-Cases
+
+Karteikarte 21
+Frage: Was ist eine Extension in einem Use-Case Diagramm?
+Antwort:
+- Bedingungen, unter denen ein Use-Case erweitert wird
+- Modellierung von Spezial- oder Fehlerfällen
+
+Karteikarte 22
+Frage: Wann verwendet man <<include>> in einem Use-Case Diagramm?
+Antwort:
+- Wenn ein Use-Case zwingend einen anderen Use-Case beinhaltet
+- Muss direkt mit ausgeführt werden
+
+Karteikarte 23
+Frage: Was ist der Unterschied zwischen <<include>> und <<extend>>?
+Antwort:
+- <<include>>: Pflichtverwendung eines Use-Cases
+- <<extend>>: Optionale Erweiterung eines Use-Cases
+
+Karteikarte 24
+Frage: Welche Vorteile bietet eine strukturierte Spezifikation textlicher Anforderungen?
+Antwort:
+- Übersichtlichere Erfassung
+- Unterstützung von Konsistenz und Vollständigkeit
+
+Karteikarte 25
+Frage: Nenne typische Felder in einer strukturierten Spezifikation.
+Antwort:
+- Name
+- Beschreibung
+- Inputs
+- Outputs
+- Pre-Condition
+- Post-Condition
+- Aktion
+
+Karteikarte 26
+Frage: Was sind die Hauptziele der Non-Functional Requirements?
+Antwort:
+- Beschreiben die Qualitätsattribute des Systems
+- Betreffen oft das gesamte System
+
+Karteikarte 27
+Frage: Wie lassen sich User Stories validieren?
+Antwort:
+- Kriterien für die Validierung werden auf der Rückseite notiert
+- Prüfung von Priorität und Aufwandsabschätzung
+
+Karteikarte 28
+Frage: Was sind die Bestandteile eines UML-Klassendiagramms?
+Antwort:
+- Klassen
+- Attribute
+- Methoden
+- Beziehungen zwischen Klassen
+
+Karteikarte 29
+Frage: Was beschreibt ein UML Sequenzdiagramm?
+Antwort:
+- Interaktionen zwischen Objekten in zeitlicher Reihenfolge
+- Ablauf von Nachrichten zwischen Objekten
+
+Karteikarte 30
+Frage: Welche Schritte umfasst die Anforderungserhebung und -analyse?
+Antwort:
+- Sammeln von Anforderungen
+- Klassifizierung und Organisation
+- Priorisierung und Konfliktlösung
+
+Karteikarte 31
+Frage: Wie kann ein Use-Case Diagramm einfach gehalten werden?
+Antwort:
+- Konzentration auf sichtbares Verhalten
+- Darstellung von Details/Abläufen nicht im Diagramm
+
+Karteikarte 32
+Frage: Was ist der Zweck der Dokumentation der Anforderungen?
+Antwort:
+- Zusammenfassung der Ergebnisse im Systemanforderungsdokument
+- Bereitstellung einer Referenz für Entwicklung und Validierung
+
+Karteikarte 33
+Frage: Welche Spezifikationsarten gibt es für Anforderungen?
+Antwort:
+- Natürliche Sprache
+- Strukturierte Spezifikation
+- Mathematische Spezifikation
+
+Karteikarte 34
+Frage: Was ist ein iterativer Prozess im Requirements Engineering?
+Antwort:
+- Wiederholtes Durchlaufen der Prozessschritte
+- Kontinuierliche Verbesserung und Anpassung
+
+Karteikarte 35
+Frage: Welche Vorteile bietet ein Use-Case Modell nach dem Requirements Engineering?
+Antwort:
+- Dokumentation aller möglichen Interaktionen
+- Grundlage für detailliertere Verhaltensdiagramme
+
+Karteikarte 36
+Frage: Was beinhaltet die mathematische Spezifikation von Anforderungen?
+Antwort:
+- Verwendung formaler Logiken
+- Einsatz von Automaten, OCL, Prozesskalkülen
+
+Karteikarte 37
+Frage: Wie werden Anwendungsfälle dokumentiert?
+Antwort:
+- Durch strukturierte Spezifikation
+- Detaillierte Beschreibung der Abläufe
+
+Karteikarte 38
+Frage: Was ist eine Pre-Condition in der strukturierten Spezifikation?
+Antwort:
+- Nötige Bedingungen vor der Ausführung einer Aktion
+- Voraussetzungen für die Aktion
+
+Karteikarte 39
+Frage: Was beschreibt eine Post-Condition in der strukturierten Spezifikation?
+Antwort:
+- Zustand nach der Ausführung einer Aktion
+- Zielbeschreibung nach der Aktion
+
+Karteikarte 40
+Frage: Wie können Anforderungsänderungen bei agilen Methoden gehandhabt werden?
+Antwort:
+- Inkrementelle Ermittlung entsprechend dem Entwicklungsprozess
+- Flexible Anpassung an häufige Änderungen
+
+Karteikarte 41
+Frage: Was sind die Vorteile von Anforderungsreviews?
+Antwort:
+- Systematische Analyse durch Gutachten
+- Frühzeitige Erkennung von Fehlern
+
+Karteikarte 42
+Frage: Wie unterstützt ein Prototyp bei der Anforderungsvalidierung?
+Antwort:
+- Durchführung von Experimenten am Modell
+- Feedback von Endbenutzer:innen und Kunden/Kundinnen
+
+Karteikarte 43
+Frage: Warum ist die Validierung von Anforderungen wichtig?
+Antwort:
+- Vermeidung hoher Kosten durch späte Änderungen
+- Sicherstellung, dass das System die gewünschten Funktionen erfüllt
+
+Karteikarte 44
+Frage: Was ist ein Pflichtenheft auch bekannt als?
+Antwort:
+- D-Requirements
+- Development Requirements
+- System Requirements
+
+Karteikarte 45
+Frage: Was unterscheidet Kundenanforderungen von Entwicklungsanforderungen?
+Antwort:
+- Kundenanforderungen: Sicht der Nutzer:innen, Blackbox
+- Entwicklungsanforderungen: Sicht der Entwickler:innen, Systemintern
+
+Karteikarte 46
+Frage: Welche UML-Diagrammtypen gibt es für Strukturmodelle?
+Antwort:
+- Klassendiagramm
+- Paketdiagramm
+- Komponentendiagramm
+
+Karteikarte 47
+Frage: Welche UML-Diagrammtypen gibt es für Verhaltensmodelle?
+Antwort:
+- Anwendungsfalldiagramm
+- Aktivitätsdiagramm
+- Zustandsdiagramm
+
+Karteikarte 48
+Frage: Welche UML-Diagrammtypen gibt es für Interaktionsmodelle?
+Antwort:
+- Sequenzdiagramm
+- Kommunikationsdiagramm
+- Zeitdiagramm
+
+Karteikarte 49
+Frage: Wie können mehrere Use-Cases zusammengefasst werden?
+Antwort:
+- Durch Generalisierung
+- Nutzen von Vererbung zwischen Use-Cases
+
+Karteikarte 50
+Frage: Was beschreibt die Generalisierung der Akteure in UML?
+Antwort:
+- Spezialisierungen erben alle Verbindungen
+- Vererbung erfolgt nur in eine Richtung
+
+Karteikarte 51
+Frage: Welche Qualitätskriterien sollten für die Anforderungsbeschreibung eingehalten werden?
+Antwort:
+- Gültigkeit
+- Konsistenz
+- Vollständigkeit
+
+Karteikarte 52
+Frage: Was ist der Unterschied zwischen einem Use-Case und einer User Story?
+Antwort:
+- Use-Case: Detaillierte Beschreibung von Interaktionen
+- User Story: Kurze, aus Nutzersicht geschriebene Anforderungen
+
+Karteikarte 53
+Frage: Wie werden Beziehungen zwischen Use-Cases modelliert?
+Antwort:
+- Durch <<include>> und <<extend>>
+- Generalisierung von Use-Cases
+
+Karteikarte 54
+Frage: Was umfasst die Modellierung von Akteuren im Use-Case Diagramm?
+Antwort:
+- Identifikation der Rollen
+- Darstellung der Interaktionen mit dem System
+
+Karteikarte 55
+Frage: Welche Informationen enthält eine mathematische Spezifikation von Anforderungen?
+Antwort:
+- Formale Logiken
+- Automatenmodelle
+
+Karteikarte 56
+Frage: Warum ist eine strukturierte Spezifikation vorteilhaft gegenüber natürlicher Sprache?
+Antwort:
+- Reduziert Interpretationsspielraum
+- Erhöht die Verständlichkeit und Konsistenz
+
+Karteikarte 57
+Frage: Was beschreibt eine Aktion in einer strukturierten Spezifikation?
+Antwort:
+- Die ausgeführte Aufgabe oder den Prozess
+- Details und Zwischenschritte der Ausführung
+
+Karteikarte 58
+Frage: Wie werden nicht-funktionale Anforderungen typischerweise überprüft?
+Antwort:
+- Durch indirekte Methoden wie Performance-Tests
+- Nicht immer direkt prüfbar
+
+Karteikarte 59
+Frage: Was ist das Ziel von Model Driven Development?
+Antwort:
+- Nutzung von Modellen zur Steuerung der Softwareentwicklung
+- Automatisierung von Code-Generierung aus Modellen
+
+Karteikarte 60
+Frage: Welche Rolle spielt der Hoare-Kalkül im Softwaretesten?
+Antwort:
+- Sicherstellung der Korrektheit von Programmen
+- Formale Verifikation der Programmlogik
+
+Karteikarte 61
+Frage: Was sind Design Patterns?
+Antwort:
+- Wiederverwendbare Lösungsschablonen für häufige Designprobleme
+- Best Practices im Softwareentwurf
+
+Karteikarte 62
+Frage: Welche Architekturstile gibt es in der Softwaretechnik?
+Antwort:
+- Schichtenarchitektur
+- Client-Server-Architektur
+- Microservices
+
+Karteikarte 63
+Frage: Was beschreibt die Funktionale Programmierung?
+Antwort:
+- Programmierparadigma basierend auf Funktionen
+- Vermeidung von Zustandsänderungen und Seiteneffekten
+
+Karteikarte 64
+Frage: Was ist ein Vorteil der Logischen Programmierung?
+Antwort:
+- Einsatz von Regeln und Fakten zur Problemlösung
+- Hohe Ausdruckskraft für deklarative Aufgaben
+
+Karteikarte 65
+Frage: Was beinhaltet das Anforderungsmanagement?
+Antwort:
+- Verfolgung und Steuerung von Anforderungen
+- Sicherstellung der Umsetzung und Änderungen
+
+Karteikarte 66
+Frage: Was umfasst die Implementierung in der Softwareentwicklung?
+Antwort:
+- Schreiben des Quellcodes
+- Umsetzung der spezifizierten Anforderungen
+
+Karteikarte 67
+Frage: Was zielt die Qualitätssicherung in der Softwaretechnik ab?
+Antwort:
+- Sicherstellung der Einhaltung von Qualitätsstandards
+- Vermeidung von Fehlern und Mängeln
+
+Karteikarte 68
+Frage: Was beinhaltet das Konfigurationsmanagement?
+Antwort:
+- Verwaltung von Softwareänderungen
+- Nachverfolgung von Versionen und Konfigurationen
+
+Karteikarte 69
+Frage: Was sind unterstützende Prozesse in der Softwaretechnik?
+Antwort:
+- Prozesse wie Projektmanagement, Dokumentation
+- Unterstützung der Hauptentwicklungsprozesse
+
+Karteikarte 70
+Frage: Was sind typische Inhalte einer Softwaredokumentation?
+Antwort:
+- Benutzerhandbuch
+- Technische Spezifikationen
+- Wartungsdokumentation
+
+Karteikarte 71
+Frage: Wie erfolgt das Deployment in der Softwareentwicklung?
+Antwort:
+- Bereitstellung der Software für die Nutzer:innen
+- Installation und Konfiguration in der Produktionsumgebung
+
+Karteikarte 72
+Frage: Was umfasst der Betrieb, die Wartung und Pflege einer Software?
+Antwort:
+- Überwachung des Softwaresystems
+- Durchführung von Updates und Bugfixes
+
+Karteikarte 73
+Frage: Was ist Projektmanagement in der Softwaretechnik?
+Antwort:
+- Planung, Steuerung und Abschluss von Softwareprojekten
+- Ressourcen- und Zeitmanagement
+
+Karteikarte 74
+Frage: Was beschreibt die Codequalität?
+Antwort:
+- Lesbarkeit und Wartbarkeit des Quellcodes
+- Einhaltung von Programmierstandards
+
+Karteikarte 75
+Frage: Was ist die Bedeutung von Design Patterns in der Softwareentwicklung?
+Antwort:
+- Erleichtern die Lösung wiederkehrender Designprobleme
+- Verbessern die Wartbarkeit und Erweiterbarkeit des Codes
+
+Karteikarte 76
+Frage: Welche Programmierparadigmen werden im Unterricht behandelt?
+Antwort:
+- Funktionale Programmierung (Haskell)
+- Logische Programmierung (Prolog)
+
+Karteikarte 77
+Frage: Was ist ein Vorteil der objektorientierten Entwurfsmethoden?
+Antwort:
+- Wiederverwendbarkeit von Code durch Klassen und Objekte
+- Förderung der Modularität und Kapselung
+
+Karteikarte 78
+Frage: Was ermöglicht Model Driven Development?
+Antwort:
+- Automatische Generierung von Code aus Modellen
+- Verbesserung der Konsistenz zwischen Design und Implementierung
+
+Karteikarte 79
+Frage: Was sind nicht-funktionale Anforderungen im Kontext der Anforderungen?
+Antwort:
+- Beschreiben die Eigenschaften des Systems
+- Beziehen sich auf Sicherheit, Performance, Zuverlässigkeit
+
+Karteikarte 80
+Frage: Wie können Rechtschreibfehler in der Produktsuche toleriert werden?
+Antwort:
+- Implementierung von Fuzzy-Search-Algorithmen
+- Verwendung von Vorschlägen und Autokorrektur
+
+Karteikarte 81
+Frage: Welche Bezahlmethoden sind im Fallbeispiel vorgesehen?
+Antwort:
+- Bankeinzug
+- Kreditkartenzahlung
+
+Karteikarte 82
+Frage: Was muss vor der Bestellung im Online-Shop sichergestellt werden?
+Antwort:
+- Erfolgreiche Bezahlung
+- Verifizierung der Zahlung
+
+Karteikarte 83
+Frage: Wie sollen die Nutzer:innen im System verwaltet werden?
+Antwort:
+- Registrierung von Kunden und Mitarbeitenden
+- Authentifizierungsmethoden für Berechtigungen
+
+Karteikarte 84
+Frage: Warum sollen alle Funktionen von Nicht-Entwickler:innen getestet werden?
+Antwort:
+- Unvoreingenommene Fehlererkennung
+- Verbesserung der Benutzerfreundlichkeit
+
+Karteikarte 85
+Frage: Was umfasst die architektonische Gestaltung einer Software?
+Antwort:
+- Wahl des Architekturstils
+- Definition der Systemkomponenten und deren Interaktionen
+
+Karteikarte 86
+Frage: Was sind Vorteile der funktionalen Programmierung mit Haskell?
+Antwort:
+- Hohe Abstraktion und Wiederverwendbarkeit
+- Nebenwirkungsfreier Code
+
+Karteikarte 87
+Frage: Was beschreibt die logische Programmierung mit Prolog?
+Antwort:
+- Einsatz von Fakten und Regeln zur Problemlösung
+- Fokus auf deklarative Problembeschreibung
+
+Karteikarte 88
+Frage: Wie unterstützen Design Patterns die Softwareentwicklung?
+Antwort:
+- Bieten erprobte Lösungen für häufige Probleme
+- Fördern konsistente Softwarearchitekturen
+
+Karteikarte 89
+Frage: Was ist der Zweck von Qualitätsicherung im Softwareentwicklungsprozess?
+Antwort:
+- Sicherstellung der Produktqualität
+- Vermeidung von Fehlern und Verbesserung der Benutzerzufriedenheit
+
+Karteikarte 90
+Frage: Welche Elemente sind in einer UML-Komponente enthalten?
+Antwort:
+- Schnittstellen
+- Abhängigkeiten zu anderen Komponenten
+
+Karteikarte 91
+Frage: Wie wird in UML die Systemgrenze dargestellt?
+Antwort:
+- Durch einen Rahmen um das System
+- Akteure befinden sich außerhalb der Systemgrenze
+
+Karteikarte 92
+Frage: Was beschreibt ein Aktivitätsdiagramm in UML?
+Antwort:
+- Ablauf von Aktivitäten und Aktionen
+- Entscheidungs- und Parallelitätsstrukturen
+
+Karteikarte 93
+Frage: Wie werden Zustandsänderungen in einem Zustandsdiagramm dargestellt?
+Antwort:
+- Zustände als Knoten
+- Übergänge als Pfeile
+
+Karteikarte 94
+Frage: Was ist der Zweck eines Kommunikationsdiagramms in UML?
+Antwort:
+- Darstellung von Interaktionen zwischen Objekten
+- Fokus auf die Beziehungen und Nachrichtenflüsse
+
+Karteikarte 95
+Frage: Wie unterstützt das Konfigurationsmanagement die Softwareentwicklung?
+Antwort:
+- Verwaltung von Quellcodeänderungen
+- Sicherstellung der Nachvollziehbarkeit von Versionen
+
+Karteikarte 96
+Frage: Was umfasst die Wartung einer Software?
+Antwort:
+- Fehlerbehebung
+- Anpassungen an geänderte Anforderungen
+
+Karteikarte 97
+Frage: Wie trägt die Dokumentation zur Softwarequalität bei?
+Antwort:
+- Bietet Verständnis für das System
+- Unterstützt Wartung und Weiterentwicklung
+
+Karteikarte 98
+Frage: Was ist ein Vorteil der projektbasierten Verwaltung in der Softwareentwicklung?
+Antwort:
+- Effiziente Ressourcennutzung
+- Strukturierte Planung und Durchführung
+
+Karteikarte 99
+Frage: Welche Rolle spielt der Projektleiter in der Softwareentwicklung?
+Antwort:
+- Koordination des Teams
+- Überwachung von Zeit und Ressourcen
+
+Karteikarte 100
+Frage: Warum ist die Pflege der Software wichtig?
+Antwort:
+- Anpassung an neue Anforderungen
+- Sicherstellung der langfristigen Funktionalität

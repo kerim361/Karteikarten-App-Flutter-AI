@@ -1,0 +1,24 @@
+Erstelle aus folgendem Unterrichtstext bitte mindestens 30 und höchstens 100 Karteikarten im exakt folgenden Format:
+
+Karteikarte 1
+Frage: …
+Antwort:
+- …
+- …
+
+Karteikarte 2
+Frage: …
+Antwort:
+- …
+- …
+
+… usw.
+
+Wichtig:
+- Verwende für jede Antwort exakt ein paar stichpunktartige Zeilen („- …“).
+- Die Antworten sollen kurz und prägnant sein.
+- Nenne keinerlei zusätzliche Erklärungen, Einleitungen oder Schlusssätze vor oder nach den Karteikarten.
+- Erhöhe oder reduziere ggf. die Detailtiefe, um auf mindestens 30 und höchstens 100 Karteikarten zu kommen.
+
+Hier der Unterrichtstext (bitte auswerten und daraus die Karteikarten generieren):
+

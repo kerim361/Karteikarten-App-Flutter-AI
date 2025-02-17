@@ -1,0 +1,193 @@
+1. start.py wandelt die EINGABE-HASH.pdf im ../Hashes/EINGABE-HASH/EINGABE-HASH.pdf zu ../Hashes/EINGABE-HASH/EINGABE-HASH.txt it der PDFtoTXT.py die so aussieht : 
+
+import fitz  # PyMuPDF
+import sys
+import os
+
+def pdf_to_txt(pdf_datei, txt_datei=None):
+    """Konvertiert eine PDF-Datei in eine TXT-Datei."""
+    
+    if not os.path.isfile(pdf_datei):
+        print(f"Fehler: Die Datei {pdf_datei} wurde nicht gefunden.")
+        return
+    
+    if txt_datei is None:
+        txt_datei = os.path.splitext(pdf_datei)[0] + ".txt"
+    
+    try:
+        # PDF öffnen
+        doc = fitz.open(pdf_datei)
+        text = ""
+
+        # Text aus jeder Seite extrahieren
+        for seite in doc:
+            text += seite.get_text("text") + "\n"
+
+        # Text in eine Datei speichern
+        with open(txt_datei, "w", encoding="utf-8") as f:
+            f.write(text)
+
+        print(f"Erfolgreich gespeichert: {txt_datei}")
+    
+    except Exception as e:
+        print(f"Ein Fehler ist aufgetreten: {e}")
+
+def main():
+    if len(sys.argv) != 2:
+        print("Verwendung: python pdf_to_txt.py datei.pdf")
+        sys.exit(1)
+
+    pdf_datei = sys.argv[1]
+    pdf_to_txt(pdf_datei)
+
+if __name__ == "__main__":
+    main()
+
+
+2. diese EINGABE-HASH.txt wird von chatGPTAnfrage.py in Karteikarten umgewandelt mit der gptPrompt.txt + ../Hashes/EINGABE-HASH/EINGABE-HASH.txt
+ die antwort soll gespeichert werden in ../Hashes/EINGABE-HASH/EINGABE-HASH-KK.txt
+ 
+ das ist die chatGPTAnfrage.py : 
+ import os
+import sys
+import time
+from openai import OpenAI
+
+# API-Schlüssel sicher aus Umgebungsvariablen laden
+api_key = os.environ.get("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("Der API-Schlüssel ist nicht gesetzt. Bitte füge ihn als Umgebungsvariable 'OPENAI_API_KEY' hinzu.")
+
+# OpenAI-Client initialisieren
+client = OpenAI(
+    api_key=api_key
+)
+
+def split_text(text, max_length=50000):
+    """Teilt den Text in größere Abschnitte auf, die jeweils max_length Zeichen lang sind."""
+    return [text[i:i+max_length] for i in range(0, len(text), max_length)]
+
+def stelle_anfrage_und_speichere(folien_dateiname):
+    try:
+        # Absoluten Pfad berechnen
+        folien_dateiname = os.path.abspath(folien_dateiname)
+
+        # Überprüfen, ob die Datei existiert
+        if not os.path.isfile(folien_dateiname):
+            raise FileNotFoundError(f"Die Datei wurde nicht gefunden.\nGesucht unter: {folien_dateiname}")
+        
+        gpt_prompt_path = os.path.abspath("gptPrompt.txt")
+
+        if not os.path.isfile(gpt_prompt_path):
+            raise FileNotFoundError(f"Die Datei gptPrompt.txt wurde nicht gefunden.\nGesucht unter: {gpt_prompt_path}")
+        
+        # Text aus gptPrompt.txt lesen
+        with open(gpt_prompt_path, "r", encoding="utf-8") as prompt_file:
+            gpt_prompt = prompt_file.read()
+        
+        # Text aus der gegebenen Folien-Datei lesen
+        with open(folien_dateiname, "r", encoding="utf-8") as folien_file:
+            folien_text = folien_file.read()
+        
+        if not folien_text.strip():
+            raise ValueError(f"Die Datei {folien_dateiname} ist leer. Bitte verwende eine Datei mit Inhalt.")
+        
+        # Text in größere Abschnitte aufteilen
+        text_chunks = split_text(folien_text, max_length=40000)
+        
+        # Datei speichern mit -KK Suffix
+        ausgabe_dateiname = f"{os.path.splitext(folien_dateiname)[0]}-KK.txt"
+        
+        with open(ausgabe_dateiname, "w", encoding="utf-8") as file:
+            for i, chunk in enumerate(text_chunks):
+                chunk_prompt = gpt_prompt.replace("mindestens 30 und höchstens 100", 
+                                                  f"mindestens {30 // len(text_chunks)} und höchstens {100 // len(text_chunks)}")
+                anforderung = f"{chunk_prompt}\n{chunk}"
+                
+                # Anfrage an das Chat-Modell
+                response = client.chat.completions.create(
+                    messages=[{"role": "user", "content": anforderung}],
+                    model="o1-mini"
+                )
+                
+                # Antwort extrahieren und speichern
+                antwort = response.choices[0].message.content
+                file.write(antwort + "\n")
+                print(f"Abschnitt {i+1} / {len(text_chunks)} wurde verarbeitet und gespeichert.")
+
+        print(f"Die Antwort wurde in der Datei '{ausgabe_dateiname}' gespeichert.")
+
+    except FileNotFoundError as fnf_error:
+        print(f"Fehler: {fnf_error}")
+    except ValueError as val_error:
+        print(f"Fehler: {val_error}")
+    except Exception as e:
+        print(f"Ein unerwarteter Fehler ist aufgetreten: {e}")
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Verwendung: python chatGPTAnfrage.py folientext.txt")
+        sys.exit(1)
+    
+    folien_dateiname = sys.argv[1]
+    stelle_anfrage_und_speichere(folien_dateiname)
+
+if __name__ == "__main__":
+    main()
+
+3.
+dann lasse die KK_Clean.py drüber laufen die so aussieht : 
+
+import re
+import sys
+
+def korrigiere_karteikarten(eingabe_datei, ausgabe_datei=None):
+    """
+    Korrigiert die Nummerierung der Karteikarten in einer Textdatei.
+
+    Args:
+        eingabe_datei (str): Der Name der Eingabedatei.
+        ausgabe_datei (str, optional): Der Name der Ausgabedatei. 
+                                       Standardmäßig wird {eingabe_datei}_korrigiert.txt verwendet.
+    """
+    if ausgabe_datei is None:  # Standardwert setzen, falls nicht angegeben
+        ausgabe_datei = f"{eingabe_datei}_korrigiert.txt"
+
+    try:
+        # Datei einlesen
+        with open(eingabe_datei, "r", encoding="utf-8") as file:
+            inhalt = file.readlines()
+        
+        neue_zeilen = []
+        karteikarten_index = 1  # Start bei 1
+        
+        for zeile in inhalt:
+            # Überprüfen, ob die Zeile mit "Karteikarte X" beginnt
+            if re.match(r"Karteikarte\s*\d+", zeile.strip()):
+                neue_zeilen.append(f"Karteikarte {karteikarten_index}\n")
+                karteikarten_index += 1
+            else:
+                neue_zeilen.append(zeile)
+
+        # Datei mit korrigierter Nummerierung speichern
+        with open(ausgabe_datei, "w", encoding="utf-8") as file:
+            file.writelines(neue_zeilen)
+
+        print(f"✅ Datei gespeichert: {ausgabe_datei}")
+
+    except FileNotFoundError:
+        print(f"❌ Fehler: Datei '{eingabe_datei}' nicht gefunden.")
+    except Exception as e:
+        print(f"❌ Unerwarteter Fehler: {e}")
+
+def main():
+    if len(sys.argv) != 2:
+        print("Verwendung: python korrigiere_karteikarten.py eingabe_datei.txt")
+        sys.exit(1)
+    
+    eingabe_datei = sys.argv[1]
+    korrigiere_karteikarten(eingabe_datei)
+
+if __name__ == "__main__":
+    main()

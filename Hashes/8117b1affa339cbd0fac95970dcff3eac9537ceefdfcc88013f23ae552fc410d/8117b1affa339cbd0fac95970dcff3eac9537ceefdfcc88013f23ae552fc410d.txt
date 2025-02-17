@@ -1,0 +1,987 @@
+SESE
+Softwaretechnik und 
+Programmierparadigmen
+Prof. Dr. Sabine Glesner
+Software and Embedded Systems Engineering
+Technische Universität Berlin
+Requirements Engineering
+07
+
+Diese VL
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+2
+Planung
+Entwicklungs-
+modelle
+Anforderungs
+management
+Analyse 
+und 
+Entwurf
+Objekt-
+orientierter 
+Entwurf 
+(UML,OCL)
+Model 
+Driven 
+Develop
+ment
+Implementierung
+Design Patterns
+Architekturstile
+Funktionale 
+Programmierung 
+(Haskell)
+Logische 
+Programmierung 
+(Prolog)
+Qualitäts-
+sicherung
+Testen
+Korrektheit 
+(Hoare-Kalkül)
+Code-
+Qualität
+Unter-
+stützende 
+Prozesse
+Konfigurations-
+Management
+Projekt-
+Management
+Deployment
+Betrieb, Wartung, 
+Pflege
+Dokumentation
+Softwaretechnik-Anteil
+Programmierparadigmen-Anteil
+
+Inhalt
+Requirements Engineering
+•
+Grundlagen
+•
+Textuelle Anforderungsspezifikation
+•
+Grafische Anforderungsspezifikation
+•
+Nicht-Funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+3
+
+Inhalt
+Requirements Engineering
+•
+Grundlagen
+•
+Textuelle Anforderungsspezifikation
+•
+Grafische Anforderungsspezifikation
+•
+Nicht-Funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+4
+
+Motivation
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+5
+License covered by the Classroom Usage Statement
+
+Requirements Engineering
+Der passende Requirements Engineering Prozess hängt von den spezifischen 
+Gegebenheiten ab, besteht aber meist aus vier Elementen
+Ermittlung der Anforderungen
+Entwickler:innen und Kunden/Kundinnen bestimmen
+gemeinsam die Entwicklungsziele
+Spezifikation der Anforderungen
+Formale oder informale Dokumentierung von Anforderungen
+Validierung der Anforderungen
+Überprüfung ob die Anforderungen das gewünschte
+System definieren
+Dokumentation der Anforderungen
+Zusammenfassung der Ergebnisse im Systemanforderungsdokument
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+6
+Dokumentation
+Validierung
+Spezifikation
+Ermittlung
+
+Iteratives Requirements Engineering
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+7
+Ian Sommerville, Software-Engineering, Chapter 4
+Häufig wird der Prozess iterativ durchlaufen
+
+Anforderungserhebung und -analyse
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+8
+Umfasst die Ermittlung und Spezifikation der Anforderungen
+Sammeln von Anforderungen
+Ermittlung der Anforderungen aller Projektbeteiligten
+Klassifizierung und Organisation der Anforderungen
+Gruppieren von Anforderungen, Identifizierung von Subsystemen
+Priorisierung der Anforderungen und Auflösung von Konflikten
+Meist Treffen der Projektbeteiligten, um Kompromisse auszuarbeiten
+Spezifikation der Anforderungen
+Formale oder informale Dokumentierung von Anforderungen (s.o.)
+Dokumentation
+Validierung
+Spezifikation
+Ermittlung
+
+Anforderungserhebung und -analyse
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+9
+Ian Sommerville, Software-Engineering, Chapter 4
+Dokumentation
+Validierung
+Spezifikation
+Ermittlung
+
+Validierung der Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+10
+Vermeidung von hohen Kosten durch späte Änderungen der 
+Anforderungen
+Prüfkriterien
+Gültigkeit, Konsistenz, Vollständigkeit, Realisierbarkeit, Verifizierbarkeit
+Techniken zur Validierung:
+Anforderungsreviews: Systematische Analyse durch Gutachten
+Prototypen: Experimente an Modell durch
+                      Endbenutzer:innen und Kunden/Kundinnen
+Testfallerzeugung: Offenbart Probleme bei der Erzeugung von Testfällen
+Dokumentation
+Validierung
+Spezifikation
+Ermittlung
+
+Dokumentation der Anforderungen
+Besteht im Wesentlichen aus…
+Lastenheft (aka. C-Requirements aka. Customer Requirements aka. User Requirements)
+• Alle Anforderungen, die Benutzer:innen an das System als Blackbox stellen
+• Anforderungen aus Sicht der Kunden/Kundinnen bzw. Endanwender:innen
+• „Was soll die Software können?“
+Pflichtenheft (aka. D-Requirements aka. Development Requirements aka. System Requirements)
+• Aus dem Lastenheft abgeleitete Anforderungen an das System
+• Anforderungen aus Sicht der/des Auftragnehmenden
+• „In welchem Umfang und unter welchen Bedingungen wird die Software eingesetzt?“
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+11
+Dokumentation
+Validierung
+Spezifikation
+Ermittlung
+
+Inhalt
+Requirements Engineering
+•
+Grundlagen
+•
+Textuelle Anforderungsspezifikation
+•
+Grafische Anforderungsspezifikation
+•
+Nicht-Funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+12
+
+Textuelle Anforderungsspezifikation
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+13
+License covered by the Classroom Usage Statement
+
+Textuelle Anforderungsspezifikation
+1. Spezifikation in natürlicher Sprache
+• Ausführliche textuelle Beschreibung der Anforderungen an ein System bzw. einer Funktionalität
+• Problem: Häufig entsteht viel Interpretationsspielraum, da natürliche Sprache nicht eindeutig ist
+2. Strukturierte Spezifikation
+• Übersichtlichere Erfassung von Anforderungen im Vergleich zu natürlicher Sprache 
+• Tabellarische Erfassung von Anforderungen mit einheitlichen Eckdaten wie z.B.
+3. Mathematische Spezifikation
+• Nutzen eines mathematischen Formalismus zur Beschreibung der Anforderung
+• Formalismen: Formale Logiken, Automaten, (Object) Z, OCL, Prozesskalküle, …
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+14
+Funktion
+Beschreibung
+Inputs
+Outputs
+Aktion
+Pre-Condition
+Post-Condition
+Spätere VL
+
+Spezifikation in natürlicher Sprache
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+15
+Findet funktionale Anforderungen
+
+Spezifikation in natürlicher Sprache
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte ① in einen Warenkorb zu legen und ② diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. ③ Bevor die Bestellung aufgegeben 
+wird, muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen 
+kann. 
+④ Weiterhin soll das System gleichzeitig auch die Nutzer:innen 
+verwalten. Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen 
+registriert werden können. Auf Sicherheit soll entsprechend geachtet 
+werden.
+⑤ Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+16
+
+Funktionale Anforderungen
+① 
+Produkte in einen Warenkorb legen 
+② 
+Angelegten Warenkorb bezahlen
+③ 
+Bezahlung überprüfen
+④ 
+Nutzer verwalten
+⑤ 
+Produkte suchen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+17
+
+Alternative mit mehr Details
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte ① in einen Warenkorb zu legen und ② diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst ②a Bankeinzug und ②b 
+Kredit-kartenzahlung vorgesehen. ③ Bevor die Bestellung aufgegeben 
+wird, muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen 
+kann. 
+④ Weiterhin soll das System gleichzeitig auch die Nutzer:innen 
+verwalten. Sowohl ④a Kunden und Kundinnen als auch ④b 
+Mitarbeitende sollen registriert werden können. Auf Sicherheit soll 
+entsprechend geachtet werden.
+⑤ Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+18
+
+Alternative mit mehr Details
+① 
+Produkte in einen Warenkorb legen 
+②a Angelegten Warenkorb per Bankeinzug bezahlen
+②b Angelegten Warenkorb per Kreditkarte bezahlen
+③ 
+Bezahlung überprüfen
+④a Mitarbeitende registrieren
+④b Kunde/Kundin registrieren
+⑤ 
+Produkte suchen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+19
+
+Strukturierte Spezifikation
+Informelle, tabellarische Darstellung nach einheitlichem Schema
+➢Übersichtlicher als reiner Text
+➢unterstützt Konsistenz und Vollständigkeit
+Typische Felder:
+• Name, Beschreibung (verbal)
+• Inputs, Outputs: Datenaustausch mit der Komponente
+• Pre: Nötige Vorbedingungen für die Ausführung
+• Post: Nachbedingung – Zustand nach Ausführung; Zielbeschreibung
+• Aktion: Ausgeführte Aktionen, auch Details/Zwischenschritte mgl.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+20
+
+Strukturierte Spezifikation
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+21
+Funktion
+Beschreibung
+Inputs
+Outputs
+Aktion
+Pre
+Post
+Produkte in 
+einen 
+Warenkorb 
+legen
+Eine beliebige 
+Anzahl eines 
+Produkts wird von 
+Kunden/Kundinnen 
+ausgewählt und 
+dem Warenkorb 
+hinzugefügt
+Produkt,
+Anzahl
+Erfolgs-
+nachricht
+Warenkorb 
+aktualisieren
+Anzahl 
+größer 0
+Anzahl des 
+Produkts im 
+Warenkorb 
+um Anzahl 
+erhöht
+Angelegten 
+Warenkorb 
+bezahlen
+Inhalt des 
+Warenkorbs wird 
+bestellt. 
+Zahlungsmethode 
+„EC“ oder „Kredit“ 
+wird zur Auswahl 
+gestellt
+Waren-
+korb
+Erfolgs-
+nachricht
+Bank-
+Transaktion 
+initiieren, 
+Versand 
+vorbereiten
+Kunde/
+Kundin 
+registriert, 
+Bankdaten 
+verifiziert
+Warenkorb 
+geleert, 
+Bestelldaten 
+hinterlegt
+
+User Stories
+Agile Methoden gehen von häufigen Anforderungsänderungen aus
+➢Detaillierte/vollständige Dokumentation vorab nicht möglich (oder 
+Zeitverschwendung)
+➢Anforderungen werden inkrementell entsprechend dem 
+Entwicklungsprozess ermittelt
+Passendes Format: User Stories
+• Kurze Beschreibung einer einzelnen Anforderung
+• 1-2 Sätze (natürlichsprachlich)
+• Aus Sicht von Benutzer:innen (Rolle) geschrieben
+• Konzentriert sich auf das Ergebnis (“was brauchen Benutzer:innen”, 
+statt “was sollte das System (wie) liefern”)
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+22
+
+User Stories
+Je nach Vereinbarung gibt es ein einheitliches Format, z.B.:
+As a (role) I want (something) so that (benefit). [Quelle:2]
+Beispielsweise: 
+• User Stories werden auf Karten notiert (bzw. möglichst einfaches Tool)
+• Auf der Rückseite werden Kriterien für die Validierung notiert
+• Weitere Infos: Priorität (kann, sollte, muss), Aufwandsabschätzung 
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+23
+#123
+Als Kundin/Kunde möchte ich die 
+Produkte im Warenkorb bezahlen, 
+damit sie mir zugesendet werden.
+#1
+Als Student:in möchte ich eine
+Prüfung anmelden.
+Prio: muss
+Aufwand (in TU-SAP): 5000
+
+Inhalt
+Requirements Engineering
+•
+Grundlagen
+•
+Textuelle Anforderungsspezifikation
+•
+Grafische Anforderungsspezifikation
+•
+Nicht-Funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+24
+
+Grafische Anforderungsspezifikation
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+25
+Von der Beraterin 
+beschrieben
+Vom Programmierer 
+entwickelt
+Von der Analytikerin 
+entworfen
+Vom Kunden erklärt
+Dokumentiert
+Installiert
+In Rechnung gestellt
+Was der Kunde 
+eigentlich wollte
+Was weiter 
+gepflegt wurde
+Von der Projektleiterin 
+verstanden
+
+UML
+Die Unified Modeling Language (UML) ist eine visuelle Sprache zur 
+Spezifikation, Konstruktion und Dokumentation technischer Systeme
+• Erste Ansätze Mitte der 90er von Grady Booch, James Rumbaugh und Ivar 
+Jacobson (Rational Software Corporation) 
+• Ziel: „Unified Method“ verschiedener objektorientierter 
+Modellierungsmethoden 
+• als einheitliche Modellierungssprache seit 1997 von der OMG (Object 
+Management Group) standardisiert
+• Aktuelle Version (seit Juni 2015): UML 2.5
+• Spezifikation: http://www.omg.org/spec/UML/
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+26
+
+UML Spezifikation
+UML Infrastructure
+• Definiert den Sprachkern der UML (z.B. Konzepte wie Klasse, 
+Assoziation, Attribut und Methode)
+• Erweiterbar durch Erweiterungsmechanismen
+auf Nutzer:innen-Ebene und Profile
+UML Superstructure
+• Erweitert den Sprachkern auf den vollständigen UML-Sprachumfang
+• Definiert Modellelemente, Notationen, Diagrammtypen
+• Definiert welche Eigenschaften Sprachelemente haben dürfen und 
+welche Beziehungen zulässig sind
+UML Object Constraint Language (OCL)
+• Zur Spezifikation von Invarianten und Bedingungen
+• Metamodell-basierte Definition
+• Konsistent zum UML-Metamodell
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+27
+
+UML Diagramme
+UML definiert eine Menge von Diagrammtypen
+• Mehrere Diagramme können gemeinsam eine Sicht auf ein UML-Modell 
+definieren
+UML-Modelle haben keinen Vollständigkeitsanspruch
+• Dass bestimmte Modellteile nicht aufgeführt werden heißt nicht, dass sie 
+nicht da sind
+Modelle können schrittweise erweitert und gemischt werden
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+28
+Sicht
+Sicht
+Modell bzw.
+Modellelemente
+Diagramme
+
+UML Diagrammübersicht
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+29
+UML-Diagramm
+Strukturdiagramm
+Verhaltensdiagramm
+Klassen
+diagramm
+Paket
+diagramm
+Komponenten
+diagramm
+Objekt
+diagramm
+Verteilungs
+diagramm
+Kompositions
+strukturdiagramm
+Anwendungs
+falldiagramm
+Aktivitäts
+diagramm
+Zustands
+diagramm
+Interaktions
+diagramm
+Interaktions
+ϋbersicht
+Sequenz
+diagramm
+Kommunikations
+diagramm
+Zeit
+diagramm
+
+Verhaltensmodellierung mit UML 
+Verhaltensmodellierung betrifft dynamische Aspekte des Systems
+Verhalten ist beobachtbar als Veränderungen…
+… der Eigenschaften der beteiligten Elemente (Zustandsänderungen)
+… der Struktur des Gesamtsystems
+Grundformen der Verhaltensbeschreibung zur Unterstützung 
+verschiedener Sichten auf das Verhalten
+• Anwendungsfälle (Use Cases)
+• Zustandsautomaten
+• Aktivitäten
+• Interaktionen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+30
+
+UML Diagrammübersicht
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+31
+UML-Diagramm
+Strukturdiagramm
+Verhaltensdiagramm
+Klassen
+diagramm
+Paket
+diagramm
+Komponenten
+diagramm
+Objekt
+diagramm
+Verteilungs
+diagramm
+Kompositions
+strukturdiagramm
+Anwendungs
+falldiagramm
+Aktivitäts
+diagramm
+Zustands
+diagramm
+Interaktions
+diagramm
+Interaktions
+ϋbersicht
+Sequenz
+diagramm
+Kommunikations
+diagramm
+Zeit
+diagramm
+
+Use cases
+Spezifikation eines fachlichen Ziels von Akteur:in (Anwendungsfall)
+• Akteur:in (Rolle) wird identifiziert
+• Use Case wird benannt und ggfs. genauer spezifiziert
+• Wesentliche Spezial- und Fehlerfälle werden mit aufgeführt
+Darstellung: 
+• UML Use-Case-Diagramm (enthält mehrere Use-Cases, Details später)
+• Detaillierte Dokumentation von Use-Cases z.B. durch strukturierte Spezifikation
+• Abläufe durch weitere Diagramme dokumentiert (z.B. Sequenzdiagramm)
+Nach dem Requirements Engineering:
+➢ alle möglichen Interaktionen mit dem System als Use-Cases dokumentiert 
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+32
+
+Use-Case (Anwendungsfall-) Diagramm
+Grafische Erfassung von Akteuren/Akteurinnen
+ 
+ 
+ 
+       und Anwendungsfällen
+Modellierungselemente
+• Akteur:in
+• Anwendungsfälle
+• Akteur:in versucht mit dem System ein fachliches Ziel zu erreichen
+• Kann mehrere Ablauf-Szenarien zusammenfassen (Bsp. 
+Erfolg/Misserfolg)
+• Beziehungen
+Use-Case Diagramm möglichst einfach halten
+• Konzentration auf sichtbares Verhalten
+• Von Akteur:in angestoßen
+• Darstellung von Details/Abläufen nicht im Use-Case-Diagramm!
+➢ Grundlage für detailliertere Verhaltensdiagramme
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+33
+
+Fallbeispiel (Auszug)
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+34
+Akteur:in
+①
+②
+
+Use-Case Modellierung
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+35
+Akteur:in „Customer“ 
+kann zwei unabhängige 
+Dinge tun
+Akteur:in befindet 
+sich außerhalb des 
+Systems.
+Details (interner 
+Ablauf) können 
+abstrahiert werden
+Systemgrenze
+
+Extension
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+36
+Extension Points sind die 
+Bedingungen unter denen 
+der Anwendungsfall 
+erweitert wird
+Use Case mit 
+<<extend>> kann, aber 
+muss nicht direkt mit 
+ausgeführt werden (Zur 
+Modellierung von 
+Spezial-/Fehlerfällen)
+Alternative: Nach dem Anlegen des 
+Warenkorbs direkt zur Kasse gehen
+
+Fallbeispiel (Auszug)
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+37
+③
+
+Mehrere Akteure/Akteurinnen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+38
+Für Details und Erklärungen 
+können Kommentare 
+verwendet werden
+Es können weitere 
+Akteure/Akteurinnen 
+an einem
+Use-Case beteiligt sein
+③
+
+Including
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+39
+Use Case mit 
+<<include>> muss direkt 
+mit ausgeführt werden
+Alternative: Die Bezahlung wird 
+automatisch an der Kasse 
+überprüft
+
+Fallbeispiel (Auszug)
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+40
+②a
+②b
+
+Generalisierung der Use-Cases
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+41
+Zusammenfassen von 
+mehreren Optionen 
+durch Generalisierung 
+von Use-Cases
+Customer hat zwei 
+verschiedene 
+Optionen
+
+Fallbeispiel (Auszug)
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+42
+④a
+④b
+④
+
+Generalisierung der Akteure/Akteurinnen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+43
+④a
+④b
+④
+Auch Akteure/Akteurinnen 
+können Generalisiert werden. 
+Die Spezialisierungen „erben“ 
+alle Verbindungen
+Vererbung findet nur 
+in eine Richtung statt
+
+Zusammenfassung
+• Anforderungen müssen sorgfältig erfasst werden, um „richtiges“ 
+Produkt entwickeln zu können
+• Qualitätskriterien für Anforderungsbeschreibung einhalten
+• Beschreibungsmöglichkeiten
+• Natürliche Sprache
+• Strukturierte natürliche Sprache
+• Mathematische Beschreibung
+• Grafische Beschreibung
+• Anforderungsanalyse mit dem Use-Case Diagramm
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+51
+
+Inhalt
+Requirements Engineering
+•
+Grundlagen
+•
+Textuelle Anforderungsspezifikation
+•
+Grafische Anforderungsspezifikation
+•
+Nicht-Funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+52
+
+Nicht-funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+53
+License covered by the Classroom Usage Statement
+
+Funktionale vs. Nicht-Funktionale 
+Anforderungen
+Funktional
+• Beschreibt was das System tun 
+bzw. was es nicht tun soll
+• Betrifft meist einzelne Aufgaben 
+des Systems
+• Kann meistens unmittelbar 
+geprüft werden 
+• Funktionalität wie vorhanden ja/nein?
+Nicht-Funktional
+• Beschreibt auf welche Weise das 
+System bestimmte Dinge tun soll, 
+bzw. wie das System sein soll
+• Betrifft oft das gesamte System
+• Kann nicht immer direkt 
+überprüft werden
+• Wieviel Speicher wird maximal 
+gebraucht? Wie lange braucht die 
+Berechnung schlimmstenfalls? …
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+54
+
+Nicht-funktionale Anforderungen
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+55
+Ian Sommerville, Software-Engineering, Chapter 4
+
+Fallbeispiel
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+56
+Findet nicht-funktionale Anforderungen
+
+Fallbeispiel
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und 
+Kleidung verkauft, die Verwaltungssoftware eines Online-Shops zu 
+entwickeln. Der Onlineshop soll es den Kunden und Kundinnen 
+ermöglichen, Produkte in einen Warenkorb zu legen und diesen zu 
+bezahlen. Als Bezahlmethoden sind zunächst Bankeinzug und 
+Kreditkartenzahlung vorgesehen. Bevor die Bestellung aufgegeben wird, 
+muss sichergestellt werden, dass die Bezahlung tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Auf Sicherheit soll entsprechend geachtet werden.
+Produkte sollen über das Webinterface auch gesucht werden können. 
+Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von einer 
+akzeptablen Zeit sollen passende Produkte angezeigt werden. 
+Alle Funktionen werden von Nicht-Entwickler:innen ausgiebig getestet.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+57
+• nicht-funktionale Anforderungen
+
+Auszug
+• „ Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen 
+registriert werden können. Auf Sicherheit soll entsprechend geachtet 
+werden.“
+• „Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von 
+einer akzeptablen Zeit sollen passende Produkte angezeigt werden.“
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+58
+Wie könnte man das besser formulieren?
+
+Auszug verbessert
+• „ Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen 
+registriert werden können. Es soll über Authentifizierungsmethoden 
+sichergestellt werden, dass nur berechtigte Personen neue 
+Mitarbeitende anlegen können.“
+• „Dabei sollen Rechtschreibfehler toleriert werden und innerhalb von 
+höchstens 5 Sekunden sollen passende Produkte angezeigt werden. 
+Gegebenenfalls soll nur ein unvollständiger Teil der möglichen 
+Ergebnisse angezeigt werden.“
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+59
+
+Fallbeispiel
+Sie werden gebeten für einen kleines Unternehmen, das Schuhe und Kleidung 
+verkauft, die Verwaltungssoftware eines Online-Shops zu entwickeln. Der 
+Onlineshop soll es Kunden und Kundinnen ermöglichen, Produkte in einen 
+Warenkorb zu legen und diesen zu bezahlen. Als Bezahlmethoden sind 
+zunächst Bankeinzug und Kreditkartenzahlung vorgesehen. Bevor die 
+Bestellung aufgegeben wird, muss sichergestellt werden, dass die Bezahlung 
+tatsächlich erfolgen kann. 
+Weiterhin soll das System gleichzeitig auch die Nutzer:innen verwalten.
+Sowohl Kunden und Kundinnen als auch Mitarbeitende sollen registriert 
+werden können. Es soll über Authentifizierungsmethoden sichergestellt 
+werden, dass nur berechtigte Personen neue Mitarbeitende anlegen können.
+Produkte sollen über das Webinterface auch gesucht werden können. Dabei 
+sollen Rechtschreibfehler toleriert werden und innerhalb von höchstens 5 
+Sekunden sollen passende Produkte angezeigt werden. Gegebenenfalls soll 
+nur ein unvollständiger Teil der möglichen Ergebnisse angezeigt werden.
+Alle Funktionen sollen von Nicht-Entwickler:innen ausgiebig getestet werden.
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+60
+
+Lernziele
+❑ Welche Information enthält das Pflichtenheft/welche das Lastenheft?
+❑ Wie lassen sich Anforderungen textuell notieren?
+❑ Wie lassen sich natürlichsprachliche Anforderungen strukturieren?
+❑ Was sind sinnvolle Felder für strukturierte Anforderungen?
+❑ Was sind User Stories und wann ist ihr Einsatz sinnvoll?
+❑ Was ist UML?
+❑ Welche Diagramme eignen sich zur Modellierung von Anforderungen?
+❑ Woraus bestehen Anwendungsfalldiagramme?
+❑ Wie detailliert sollten Anwendungsfalldiagramme sein?
+❑ Wie werden Beziehungen zwischen Use-Cases im Anwendungsfalldiagramm modelliert?
+❑ Wie lassen sich mehrere Use-Cases bzw. Akteure/Akteurinnen zusammenfassen?
+❑ Wann verwendet man include, wann extend?
+❑ Was ist der Unterschied zwischen funktionalen und nicht-funktionalen Anforderungen?
+❑ Welche Arten von nicht-funktionalen Anforderungen gibt es?
+❑ Können nicht-funktionale Anforderungen genauso wie funktionale validiert werden?
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+61
+
+Quellen
+1. IAN SOMMERVILLE, Software-Engineering, Pearson, 2012
+2. MIKE COHN, User Stories Applied: For Agile Software 
+Development´, 2004
+WS 24/25
+SWTPP // Prof. Sabine Glesner
+62
+
